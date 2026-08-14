@@ -3,179 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HELL商城｜培養花園2 物品・水手寶石</title>
-  <meta name="description" content="HELL商城專賣培養花園2物品與水手寶石，安全交易、快速到帳。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <title>HELL商城</title>
+  <meta name="description" content="HELL商城 - 水手寶石、培養花園2、卡皮巴拉vs植物、R幣、Roblox代購、Discord服務" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="particles"></canvas>
 
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a href="#home" class="logo">
-        <span class="logo-icon">☠</span>
-        <span class="logo-text">HELL<span>商城</span></span>
-      </a>
-      <nav class="nav-links">
-        <a href="#products">商品項目</a>
-        <a href="#why">為什麼選我們</a>
-        <a href="#faq">常見問題</a>
-        <a href="https://discord.gg/k8K9CZW4YB" target="_blank" rel="noopener" class="btn-nav">立即購買</a>
-      </nav>
-      <button class="menu-toggle" aria-label="選單">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- 載入動畫 -->
+  <div id="loader">
+    <div class="loader-letters">
+      <span class="letter">H</span>
+      <span class="letter">E</span>
+      <span class="letter">L</span>
+      <span class="letter">L</span>
     </div>
-  </header>
-
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <div class="badge">安全交易・快速到帳</div>
-      <h1>HELL<span>商城</span></h1>
-      <p class="subtitle">培養花園2 物品 ／ 水手寶石</p>
-      <p class="desc">
-        專營培養花園2相關道具與水手寶石<br />
-        價格透明、交易安全、售後有保障
-      </p>
-      <div class="hero-btns">
-        <a href="https://discord.gg/k8K9CZW4YB" target="_blank" rel="noopener" class="btn primary">立即購買</a>
-        <a href="#products" class="btn outline">查看商品</a>
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
       </div>
+      <div class="progress-text" id="progress-text">0%</div>
     </div>
-    <div class="hero-glow"></div>
-  </section>
+  </div>
 
-  <section id="products" class="section products">
-    <div class="container">
-      <h2 class="section-title">商品項目</h2>
-      <p class="section-desc">目前主要販售以下兩大類商品</p>
-
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">🌱</div>
-          <h3>培養花園2 物品</h3>
-          <p>提供培養花園2各類道具、資源與稀有物品，依需求報價。</p>
-          <ul>
-            <li>稀有種子 / 植物</li>
-            <li>資源與材料包</li>
-            <li>特殊道具</li>
-            <li>大量採購可議價</li>
-          </ul>
-          <a href="https://discord.gg/k8K9CZW4YB" target="_blank" rel="noopener" class="card-btn">詢問現貨與價格</a>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">💎</div>
-          <h3>水手寶石</h3>
-          <p>水手寶石現貨販售，數量充足，快速交貨。</p>
-          <ul>
-            <li>各數量皆可購買</li>
-            <li>價格透明</li>
-            <li>安全交易流程</li>
-            <li>大量可享優惠</li>
-          </ul>
-          <a href="https://discord.gg/k8K9CZW4YB" target="_blank" rel="noopener" class="card-btn">詢問現貨與價格</a>
-        </div>
+  <!-- 正式內容 -->
+  <div id="main-content" class="hidden">
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="#home" class="logo">HELL商城</a>
+        <nav class="nav-links">
+          <a href="#services">服務項目</a>
+          <a href="#contact">聯繫我們</a>
+        </nav>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <section id="why" class="section why">
-    <div class="container">
-      <h2 class="section-title">為什麼選 HELL商城？</h2>
-      <div class="why-grid">
-        <div class="why-item">
-          <div class="why-num">01</div>
-          <h3>專注物品交易</h3>
-          <p>只做培養花園2物品與水手寶石，經驗更豐富。</p>
-        </div>
-        <div class="why-item">
-          <div class="why-num">02</div>
-          <h3>交易安全</h3>
-          <p>採用穩妥交易流程，降低詐騙風險。</p>
-        </div>
-        <div class="why-item">
-          <div class="why-num">03</div>
-          <h3>快速到帳</h3>
-          <p>有現貨即安排出貨，多數訂單快速完成。</p>
-        </div>
-        <div class="why-item">
-          <div class="why-num">04</div>
-          <h3>售後保障</h3>
-          <p>問題訂單可即時回報，符合條件提供協助。</p>
-        </div>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>HELL商城</h1>
+        <p class="subtitle">專業・安全・快速</p>
+        <p class="desc">水手寶石・培養花園2・卡皮巴拉vs植物・R幣・Discord服務</p>
+        <a href="https://discord.gg/k8K9CZW4YB" target="_blank" class="btn">立即聯繫</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="faq" class="section faq">
-    <div class="container">
-      <h2 class="section-title">常見問題</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-q">如何購買？</button>
-          <div class="faq-a">
-            <p>請直接加入我們的 Discord，告訴客服你要購買的物品與數量，即可獲得報價與交易流程說明。</p>
+    <section id="services" class="section">
+      <div class="container">
+        <h2>服務項目</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>水手寶石</h3>
+            <p>材料販售，現貨快速出貨。</p>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">交易安全嗎？</button>
-          <div class="faq-a">
-            <p>我們採用中間人或分步確認等方式進行交易，盡量降低風險。詳細流程可向客服詢問。</p>
+          <div class="card">
+            <h3>培養花園2</h3>
+            <p>寵物與道具販售<br>黃金蜻蜓、獨角獸、螢火蟲等</p>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">有現貨嗎？多久可以拿到？</button>
-          <div class="faq-a">
-            <p>多數商品有現貨，確認付款後會盡快安排交付。具體時間依商品與數量而定，客服會事先告知。</p>
+          <div class="card">
+            <h3>卡皮巴拉 vs 植物</h3>
+            <p>遊戲相關物品與代購服務。</p>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">可以大量購買嗎？</button>
-          <div class="faq-a">
-            <p>可以。大量採購可享優惠價格，請直接私訊客服詢問。</p>
+          <div class="card">
+            <h3>R幣</h3>
+            <p>Roblox R幣販售，快速到帳。</p>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">出問題怎麼辦？</button>
-          <div class="faq-a">
-            <p>訂單完成後如有異常，可立即回報客服。符合條件會協助處理，讓你交易更安心。</p>
+          <div class="card">
+            <h3>Roblox 代購</h3>
+            <p>遊戲內儲值與組合包<br>例：Rivals 克金組合包</p>
+          </div>
+          <div class="card">
+            <h3>Discord 服務</h3>
+            <p>Discord 商品・代做機器人<br>升級版守護者</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2 class="section-title">立即購買</h2>
-      <p class="section-desc">想買培養花園2物品或水手寶石？直接加入 Discord 詢問即可</p>
-
-      <div class="contact-cards" style="max-width: 420px; margin: 0 auto;">
-        <div class="contact-card">
-          <div class="contact-icon">💬</div>
-          <h3>Discord 官方伺服器</h3>
-          <p>最快回覆・即時詢價下單</p>
-          <a href="https://discord.gg/k8K9CZW4YB" target="_blank" rel="noopener" class="contact-link">立即加入 Discord</a>
-        </div>
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>聯繫我們</h2>
+        <p>有任何需求請直接加入 Discord 詢問</p>
+        <a href="https://discord.gg/k8K9CZW4YB" target="_blank" class="btn">加入 Discord</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-logo">
-          <span class="logo-icon">☠</span> HELL商城
-        </div>
-        <p>培養花園2 物品・水手寶石</p>
-        <p class="copyright">© 2026 HELL商城. All rights reserved.</p>
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 HELL商城</p>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
