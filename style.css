@@ -19,7 +19,7 @@ body {
   z-index: 2;
 }
 
-/* ===== 背景科技網格 ===== */
+/* 背景網格 */
 .bg-grid {
   position: fixed;
   inset: 0;
@@ -31,34 +31,30 @@ body {
   pointer-events: none;
 }
 
-/* ===== 背景旋轉立體字 ===== */
+/* 背景旋轉 HELL */
 .bg-hell {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   font-size: clamp(8rem, 25vw, 18rem);
   font-weight: 900;
   letter-spacing: 0.15em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.18);
   z-index: 0;
   pointer-events: none;
   animation: rotateHell 20s linear infinite;
   transform-style: preserve-3d;
   user-select: none;
+  opacity: 0.9;
 }
 
 @keyframes rotateHell {
-  0% {
-    transform: translate(-50%, -50%) rotateY(0deg) rotateX(8deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotateY(360deg) rotateX(8deg);
-  }
+  0%   { transform: translate(-50%, -50%) rotateY(0deg) rotateX(8deg); }
+  100% { transform: translate(-50%, -50%) rotateY(360deg) rotateX(8deg); }
 }
 
-/* ===== 載入動畫 ===== */
+/* 載入動畫 */
 #loader {
   position: fixed;
   inset: 0;
@@ -140,7 +136,7 @@ body {
   visibility: visible;
 }
 
-/* ===== 導覽列 ===== */
+/* 導覽列 */
 .navbar {
   position: fixed;
   top: 0;
@@ -178,7 +174,7 @@ body {
   color: #fff;
 }
 
-/* ===== Hero ===== */
+/* Hero */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -221,7 +217,7 @@ body {
   color: #000;
 }
 
-/* ===== 服務 ===== */
+/* 服務 */
 .section {
   padding: 80px 0;
   border-top: 1px solid #1a1a1a;
@@ -245,12 +241,15 @@ body {
   border: 1px solid #2a2a2a;
   background: rgba(255,255,255,0.02);
   padding: 28px 24px;
-  transition: border-color 0.2s, background 0.2s;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .card:hover {
-  border-color: #555;
-  background: rgba(255,255,255,0.04);
+  border-color: #666;
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 .card h3 {
@@ -264,7 +263,60 @@ body {
   font-size: 0.9rem;
 }
 
-/* ===== 聯繫 ===== */
+/* 常見問題 */
+.faq-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid #2a2a2a;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 18px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-q::after {
+  content: "+";
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.faq-item.active .faq-q::after {
+  content: "−";
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-a p {
+  padding: 0 20px 18px;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.faq-item.active .faq-a {
+  max-height: 150px;
+}
+
+/* 聯繫 */
 .contact {
   text-align: center;
 }
@@ -274,7 +326,7 @@ body {
   margin-bottom: 28px;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 .footer {
   border-top: 1px solid #1a1a1a;
   padding: 30px 0;
